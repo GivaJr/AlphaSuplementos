@@ -1,6 +1,6 @@
 package classesInicias;
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
 
 	private Pessoa funcionario;
 	private String funcao;

@@ -1,6 +1,6 @@
 package classesInicias;
 
-public class Cliente {
+public class Cliente extends Pessoa {
 
 	private Pessoa cliente;
 	private String objetivo;

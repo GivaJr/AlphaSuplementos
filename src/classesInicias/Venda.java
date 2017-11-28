@@ -1,11 +1,14 @@
 package classesInicias;
 
+import java.util.Date;
+
 public class Venda {
 
 	private Cliente cliente;
 	private Suplemento suplemento;
 	private Acessorio acessorio;
 	private double totalDaCompra;
+	private Date dataDaCompra;
 
 
 	public Venda(){
@@ -13,26 +16,30 @@ public class Venda {
 
 	}
 
-	public Venda(Suplemento suplemento, Cliente cliente, Acessorio acessorio,double total ){
+	public Venda(Suplemento suplemento, Cliente cliente, Acessorio acessorio,double total, Date dataDaCompra ){
 
 		this.cliente = cliente;
 		this.suplemento = suplemento;
 		this.acessorio = acessorio;
 		this.totalDaCompra = total;
+		this.dataDaCompra = dataDaCompra;
 	}
 
-	public Venda( Cliente cliente, Acessorio acessorio,double total ){
+	public Venda( Cliente cliente, Acessorio acessorio,double total, Date dataDaCompra ){
 
 		this.cliente = cliente;
 		this.acessorio = acessorio;
 		this.totalDaCompra = total;
+		this.dataDaCompra = dataDaCompra;
+		
 	}
 
-	public Venda(Suplemento suplemento, Cliente cliente,double total ){
+	public Venda(Suplemento suplemento, Cliente cliente,double total, Date dataDaCompra){
 
 		this.cliente = cliente;
 		this.suplemento = suplemento;
 		this.totalDaCompra = total;
+		this.dataDaCompra = dataDaCompra;
 	}
 
 
@@ -61,8 +68,13 @@ public class Venda {
 		this.cliente = cliente;
 	}
 
+	public Date getDataDaCompra() {
+		return dataDaCompra;
+	}
 
+	public void setDataDaCompra(Date dataDaCompra) {
+		this.dataDaCompra = dataDaCompra;
+	}
 
-
-
+	
 }

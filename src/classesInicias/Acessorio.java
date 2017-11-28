@@ -1,6 +1,6 @@
 package classesInicias;
 
-public class Acessorio {
+public class Acessorio extends Produto{
 
 	private Produto produto;
 	private String marca;
