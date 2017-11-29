@@ -2,7 +2,7 @@ package classesInicias;
 
 public class Acessorio extends Produto{
 
-	private Produto produto;
+	//private Produto produto;
 	private String marca;
 
 
@@ -11,17 +11,19 @@ public class Acessorio extends Produto{
 
 	}
 	public Acessorio(Produto produto, String marca){
-		this.produto = produto;
+		//this.produto = produto;
+
+		super(produto.getCodigo(), produto.getNome(), produto.getPreco());
 		this.marca = marca;
 	}
 
-	public Produto getProduto() {
+	/*public Produto getProduto() {
 		return produto;
 	}
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 
-	}
+	}*/
 
 	public String getMarca() {
 		return marca;
@@ -30,24 +32,7 @@ public class Acessorio extends Produto{
 		this.marca = marca;
 	}
 
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Acessorio other = (Acessorio) obj;
-		if (produto == null) {
-			if (other.produto != null)
-				return false;
-		} else if (!produto.equals(other.produto))
-			return false;
-		return true;
-	}
-	public String toString() {
-		return "Acessorio [produto=" + produto + ", marca=" + marca + "]";
-	}
+
 
 
 

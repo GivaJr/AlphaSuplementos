@@ -24,7 +24,6 @@ public class Produto {
 		return nome;
 	}
 
-
 	public String getCodigo() {
 		return codigo;
 	}
@@ -37,15 +36,29 @@ public class Produto {
 		this.nome = nome;
 	}
 
-
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
-
-
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		return true;
 	}
 
 

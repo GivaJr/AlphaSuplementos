@@ -31,7 +31,7 @@ public class Venda {
 		this.acessorio = acessorio;
 		this.totalDaCompra = total;
 		this.dataDaCompra = dataDaCompra;
-		
+
 	}
 
 	public Venda(Suplemento suplemento, Cliente cliente,double total, Date dataDaCompra){
@@ -76,5 +76,8 @@ public class Venda {
 		this.dataDaCompra = dataDaCompra;
 	}
 
+
+	
+	
 	
 }

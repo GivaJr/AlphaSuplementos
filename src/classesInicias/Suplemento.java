@@ -1,32 +1,37 @@
 package classesInicias;
 
 public class Suplemento extends Produto {
- 
- private Produto produto;
- private String marca;
- private int peso;
- private String sabor;
- private String  categoria;
- 
 
-	
+	// private Produto produto;
+
+	private String marca;
+	private int peso;
+	private String sabor;
+	private String  categoria;
+
+
+
 	public Suplemento(){
-		
+
 	}
 	public Suplemento(Produto produto,String marca,int peso, String sabor,String categoria){
-		this.produto = produto;
+		//this.produto = produto;
+		super(produto.getNome(),produto.getCodigo(), produto.getPreco());
 		this.marca = marca;
 		this.categoria = categoria;
 		this.peso = peso;
 		this.sabor = sabor;
 	}
-	
-	public Produto getProduto() {
+
+
+	/*public Produto getProduto() {
 		return produto;
 	}
 	public void setProduto(Produto produto) {
 		this.produto = produto;
-	}
+	}*/
+
+
 	public String getMarca() {
 		return marca;
 	}
@@ -51,35 +56,24 @@ public class Suplemento extends Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	
 
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Suplemento other = (Suplemento) obj;
-		if (produto == null) {
-			if (other.produto != null)
-				return false;
-		} else if (!produto.equals(other.produto))
-			return false;
-		return true;
-	}
 
-	
+
+
 	public String toString() {
-		return "Suplemento [produto=" + produto + ", marca=" + marca + ", peso=" + peso + ", sabor=" + sabor
-				+ ", categoria=" + categoria + "]";
+		return "Suplemento [marca=" + marca + ", sabor=" + sabor + ", getNome()=" + getNome() + "]";
 	}
-	
-	
-	
 
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 }
