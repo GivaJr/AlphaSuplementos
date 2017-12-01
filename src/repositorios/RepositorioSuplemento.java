@@ -63,13 +63,13 @@ public class RepositorioSuplemento {
 		Suplemento retorno = null;
 		for (i = 0; i < numeroDeSuplemento; i++) {
 			if (this.repositorioSuplemento[i].getCodigo().equals(codigo)) {
-				
+
 				retorno = this.repositorioSuplemento[i];
 			}
 		}
 		return retorno;
 	}
-	
+
 
 	private void duplicaArrayRepositorio() {
 		if (this.repositorioSuplemento!= null && this.repositorioSuplemento.length > 0) {

@@ -56,13 +56,13 @@ public class RepositorioFuncionario {
 		return retorno;
 	}
 
-	
+
 	public Funcionario buscarFuncionario(String cpf) {
 		int i;
 		Funcionario retorno = null;
 		for (i = 0; i < numeroDeFuncionario; i++) {
 			if (this.repositorioFuncionario[i].getCpf().equals(cpf)) {
-				
+
 				retorno = this.repositorioFuncionario[i];
 			}
 		}

@@ -64,14 +64,14 @@ public class RepositorioAcessorio {
 		Acessorio retorno = null;
 		for (i = 0; i < numeroDeAcessorio; i++) {
 			if (this.repositorioAcessorio[i].getCodigo().equals(codigo)) {
-				
+
 				retorno = this.repositorioAcessorio[i];
 			}
 		}
 		return retorno;
 	}
-	
-	
+
+
 	private void duplicaArrayRepositorio() {
 		if (this.repositorioAcessorio != null && this.repositorioAcessorio.length > 0) {
 			Acessorio [] arrayDuplicado = new Acessorio[this.repositorioAcessorio.length * 2];
@@ -81,7 +81,6 @@ public class RepositorioAcessorio {
 			this.repositorioAcessorio= arrayDuplicado;
 		}
 	}
-
 
 
 }

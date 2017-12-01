@@ -59,22 +59,22 @@ public class RepositorioCliente {
 		return retorno;
 	}
 
-	
-	
+
+
 	public Cliente buscarCliente(String cpf) {
 		int i;
 		Cliente retorno = null;
 		for (i = 0; i < numeroDeCliente; i++) {
 			if (this.repositorioCliente[i].getCpf().equals(cpf)) {
-				
+
 				retorno = this.repositorioCliente[i];
 			}
 		}
 		return retorno;
 	}
 
-	
-	
+
+
 
 	private void duplicaArrayRepositorio() {
 		if (this.repositorioCliente != null && this.repositorioCliente.length > 0) {
@@ -85,8 +85,5 @@ public class RepositorioCliente {
 			this.repositorioCliente= arrayDuplicado;
 		}
 	}
-
-
-
 
 }
