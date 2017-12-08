@@ -21,6 +21,10 @@ public class Cliente extends Pessoa {
 		this.objetivo = objetivo;
 	}
 
+	public String toString() {
+		return "Cliente [objetivo=" + objetivo + ", Nome =" + getNome() + "]";
+	}
+
 
 
 

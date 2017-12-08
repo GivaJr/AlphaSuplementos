@@ -13,7 +13,7 @@ public class Suplemento extends Produto {
 	public Suplemento(){
 
 	}
-	public Suplemento(Produto produto,String marca,int peso, String sabor,String categoria){
+	public Suplemento(Produto produto,int peso, String sabor,String categoria){
 
 		super(produto.getNome(),produto.getCodigo(), produto.getPreco(),produto.getMarca());
 		this.categoria = categoria;
