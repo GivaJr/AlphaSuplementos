@@ -80,4 +80,31 @@ public class RepositorioFuncionario {
 	}
 
 
+	public boolean existeFuncionario(String cpf) {
+		boolean r = false;
+		int i = this.procurarFuncionario(cpf);
+		if(i != numeroDeFuncionario){
+			r = true;
+		}
+
+
+		return r;
+	}
+
+
+	private int procurarFuncionario(String cpf) {
+		int i = 0;
+		boolean achou = false;
+		while ((!achou) && (i < this.numeroDeFuncionario)) {
+			if (cpf.equals(this.repositorioFuncionario[i].getCpf())) {
+				achou = true;
+			} else {
+				i = i + 1;
+			}
+		}
+		return i;
+	}
+
+
+
 }

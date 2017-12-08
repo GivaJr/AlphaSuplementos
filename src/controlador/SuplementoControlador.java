@@ -9,22 +9,45 @@ public class SuplementoControlador {
 
 	public void adicionarSuplemento(Suplemento suplemento){
 		if(suplemento != null){
-			rp.adicionarSuplemento(suplemento);
+			if(!this.existeSuplemento(suplemento.getCodigo())){
+				rp.adicionarSuplemento(suplemento);
+			}
 		}
 	}
-	public void removerSuplemento(String codigo){
-		rp.removerSuplemento(codigo);
 
+
+	public void removerSuplemento(String codigo){
+		Suplemento s = this.rp.buscarSuplemento(codigo);
+		if( s!= null){
+			rp.removerSuplemento(codigo);
+		}
 	}
+
+
 
 	public boolean atualizarSuplemento(String codigo, Suplemento suplemento){
-		return rp.atualizarSuplemento(codigo, suplemento);
-
+		boolean r = false;
+		if(this.existeSuplemento(codigo)){
+			r = rp.atualizarSuplemento(codigo, suplemento);
+		}
+		return r;
 	}
+
 
 	public Suplemento buscarSuplemento(String codigo){
-		return rp.buscarSuplemento(codigo);
-
+		Suplemento s = null;
+		if(this.existeSuplemento(codigo)){
+			s = rp.buscarSuplemento(codigo);
+		}
+		return s;
 	}
+
+
+	public boolean existeSuplemento(String codigo) {
+
+
+		return this.rp.existeSuplemento(codigo);
+	}
+
 
 }

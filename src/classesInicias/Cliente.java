@@ -10,7 +10,7 @@ public class Cliente extends Pessoa {
 	}
 	public Cliente(Pessoa cliente, String objetivo){
 
-		//this.cliente = cliente;
+		
 		super(cliente.getNome(), cliente.getCpf());
 		this.objetivo = objetivo;
 	}
@@ -22,16 +22,6 @@ public class Cliente extends Pessoa {
 	}
 
 
-
-	/*public Pessoa getCliente() {
-		return cliente;
-	}
-
-
-
-	public String toString() {
-		return "Cliente [cliente=" + cliente + "]";
-	}*/
 
 
 

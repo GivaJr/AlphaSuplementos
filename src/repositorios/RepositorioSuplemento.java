@@ -82,6 +82,31 @@ public class RepositorioSuplemento {
 	}
 
 
+	public boolean existeSuplemento(String codigo) {
+		boolean r = false;
+		int i = this.procurarSuplemento(codigo);
+		if(i != numeroDeSuplemento){
+			r = true;
+		}
+
+
+		return r;
+	}
+
+
+	private int procurarSuplemento(String codigo) {
+		int i = 0;
+		boolean achou = false;
+		while ((!achou) && (i < this.numeroDeSuplemento)) {
+			if (codigo.equals(this.repositorioSuplemento[i].getCodigo())) {
+				achou = true;
+			} else {
+				i = i + 1;
+			}
+		}
+		return i;
+	}
+
 
 
 }

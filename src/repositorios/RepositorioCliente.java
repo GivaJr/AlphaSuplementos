@@ -86,4 +86,30 @@ public class RepositorioCliente {
 		}
 	}
 
+
+	public boolean existeCliente(String cpf) {
+		boolean r = false;
+		int i = this.procurarCliente(cpf);
+		if(i != numeroDeCliente){
+			r = true;
+		}
+
+
+		return r;
+	}
+
+
+	private int procurarCliente(String cpf) {
+		int i = 0;
+		boolean achou = false;
+		while ((!achou) && (i < this.numeroDeCliente)) {
+			if (cpf.equals(this.repositorioCliente[i].getCpf())) {
+				achou = true;
+			} else {
+				i = i + 1;
+			}
+		}
+		return i;
+	}
+
 }

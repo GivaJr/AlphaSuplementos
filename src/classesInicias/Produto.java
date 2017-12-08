@@ -5,6 +5,7 @@ public class Produto {
 	private String nome;
 	private double preco;
 	private String codigo;
+	private String marca;
 
 
 
@@ -13,11 +14,12 @@ public class Produto {
 	}
 
 
-	public Produto (String nome,String codigo,double preco){
+	public Produto (String nome,String codigo,double preco,String marca){
 
 		this.nome = nome;
 		this.codigo = codigo;
 		this.preco = preco;
+		this.marca = marca;
 	}
 
 	public String getNome() {
@@ -30,8 +32,13 @@ public class Produto {
 
 	public double getPreco(){
 		return preco;
-
+	
 	}
+	public String getMarca() {
+		return marca;
+	}
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -45,6 +52,10 @@ public class Produto {
 	}
 
 
+	public void setMarca(String marca){
+		this.marca = marca;
+	}
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

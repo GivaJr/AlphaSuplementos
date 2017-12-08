@@ -2,9 +2,8 @@ package classesInicias;
 
 public class Suplemento extends Produto {
 
-	// private Produto produto;
 
-	private String marca;
+
 	private int peso;
 	private String sabor;
 	private String  categoria;
@@ -15,29 +14,14 @@ public class Suplemento extends Produto {
 
 	}
 	public Suplemento(Produto produto,String marca,int peso, String sabor,String categoria){
-		//this.produto = produto;
-		super(produto.getNome(),produto.getCodigo(), produto.getPreco());
-		this.marca = marca;
+
+		super(produto.getNome(),produto.getCodigo(), produto.getPreco(),produto.getMarca());
 		this.categoria = categoria;
 		this.peso = peso;
 		this.sabor = sabor;
 	}
 
 
-	/*public Produto getProduto() {
-		return produto;
-	}
-	public void setProduto(Produto produto) {
-		this.produto = produto;
-	}*/
-
-
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
 	public int getPeso() {
 		return peso;
 	}
@@ -57,23 +41,10 @@ public class Suplemento extends Produto {
 		this.categoria = categoria;
 	}
 
-
-
-
 	public String toString() {
-		return "Suplemento [marca=" + marca + ", sabor=" + sabor + ", getNome()=" + getNome() + "]";
+		return "Suplemento [peso=" + peso + ", sabor=" + sabor + ", categoria=" + categoria + ", getMarca()="
+				+ getMarca() + "]";
 	}
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
