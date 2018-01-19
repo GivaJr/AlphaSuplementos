@@ -39,8 +39,8 @@ public class Fachada {
 	}
 
 
-	public boolean atualizarCliente(String cpf, Cliente cliente) {
-		return c.atualizarCliente(cpf, cliente);
+	public void atualizarCliente(String cpf, Cliente cliente) {
+		 c.atualizarCliente(cpf, cliente);
 	}
 
 

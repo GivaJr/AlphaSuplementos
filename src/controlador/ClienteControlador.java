@@ -8,32 +8,40 @@ public class ClienteControlador {
 	private RepositorioCliente rp = new RepositorioCliente(100);
 
 	public void adicionarCliente(Cliente cliente){
-		if(cliente!= null){
-			if(!this.existeCliente(cliente.getCpf())){
-
-				this.rp.adicionarCliente(cliente);
-			}
+		
+		if(!this.rp.existeCliente(cliente.getCpf())) {
+			
+			this.rp.adicionarCliente(cliente);
+		}else {
+			
+			// tratar com exception 
 		}
+		
 	}
 
 
 	public void removerCliente(String cpf){
 		Cliente c = this.rp.buscarCliente(cpf);   
-		if(c != null){	
+		
+		if(c != null && c.getCpf().equals(cpf)){	
+		
 			rp.removerCliente(cpf);
+		
+		}else {
+			
+			//Tratar com exception
 		}
 	}
 
-
-	public boolean atualizarCliente(String cpf, Cliente cliente){
-		boolean r = false;
-		if(this.existeCliente(cpf)){
-			r = rp.atualizarCliente(cpf, cliente);
+	
+	public void atualizarCliente(String cpf, Cliente cliente){
+		
+		if(!this.existeCliente(cliente.getCpf())){
+			this.rp.atualizarCliente(cpf, cliente);
 		}
-		return r;
+		
 
 	}
-
 
 
 	public Cliente buscarCliente(String cpf){
@@ -45,8 +53,7 @@ public class ClienteControlador {
 		return c;
 	}
 
-
-
+	
 	public boolean existeCliente(String cpf) {
 
 		return this.rp.existeCliente(cpf);
