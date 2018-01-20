@@ -25,7 +25,7 @@ public class ClienteControlador {
 		
 		if(c != null && c.getCpf().equals(cpf)){	
 		
-			rp.removerCliente(cpf);
+			this.rp.removerCliente(cpf);
 		
 		}else {
 			
@@ -36,7 +36,7 @@ public class ClienteControlador {
 	
 	public void atualizarCliente(String cpf, Cliente cliente){
 		
-		if(!this.existeCliente(cliente.getCpf())){
+		if(!this.rp.existeCliente(cliente.getCpf())){
 			this.rp.atualizarCliente(cpf, cliente);
 		}
 		
@@ -46,9 +46,9 @@ public class ClienteControlador {
 
 	public Cliente buscarCliente(String cpf){
 		Cliente c = null;
-		if(this.existeCliente(cpf)){
+		if(this.rp.existeCliente(cpf)){
 
-			c =  rp.buscarCliente(cpf);
+			c =  this.rp.buscarCliente(cpf);
 		}
 		return c;
 	}

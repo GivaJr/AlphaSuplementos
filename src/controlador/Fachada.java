@@ -59,8 +59,8 @@ public class Fachada {
 	}
 
 
-	public boolean atualizarFuncionario(String cpf, Funcionario funcionario) {
-		return f.atualizarFuncionario(cpf, funcionario);
+	public void atualizarFuncionario(String cpf, Funcionario funcionario) {
+		f.atualizarFuncionario(cpf, funcionario);
 	}
 
 
@@ -79,8 +79,8 @@ public class Fachada {
 	}
 
 
-	public boolean atualizarSuplemento(String codigo, Suplemento suplemento) {
-		return s.atualizarSuplemento(codigo, suplemento);
+	public void atualizarSuplemento(String codigo, Suplemento suplemento) {
+		s.atualizarSuplemento(codigo, suplemento);
 	}
 
 

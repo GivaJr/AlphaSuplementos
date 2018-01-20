@@ -11,28 +11,38 @@ public class FuncionarioControlador {
 	private RepositorioFuncionario rp = new RepositorioFuncionario(100);
 
 	public void adicionarFuncionario(Funcionario funcionario){
-		if(funcionario!=null){
-			if(!this.existeFuncionario(funcionario.getCpf()))
-				rp.adicionarFuncionario(funcionario);
+		
+		if(!this.rp.existeFuncionario(funcionario.getCpf())) {
+			
+			this.rp.adicionarFuncionario(funcionario);
+		}else {
+			
+			// tratar com exception 
 		}
 	}
 
 	public void removerFuncionario(String cpf){
 		Funcionario f = this.rp.buscarFuncionario(cpf);
-		if(f != null){
-			rp.removerFuncionario(cpf);
+		
+		if(f != null && f.getCpf().equals(cpf)){
+			this.rp.removerFuncionario(cpf);
+		}else {
+			
+			//tratar com exceptions
 		}
 	}
 
 
-	public boolean atualizarFuncionario(String cpf, Funcionario funcionario){
-		boolean r = false;
-		if(this.existeFuncionario(cpf)){
-			r = rp.atualizarFuncionario(cpf, funcionario);
+	public void atualizarFuncionario(String cpf, Funcionario funcionario){
+		
+		if(!this.rp.existeFuncionario(funcionario.getCpf())){
+			 this.rp.atualizarFuncionario(cpf, funcionario);
 		}
-		return r;
+		
 	}
+	
 
+	
 	public Funcionario buscarFuncionario(String cpf){
 		Funcionario f = null;
 		if(this.existeFuncionario(cpf)){
@@ -42,6 +52,7 @@ public class FuncionarioControlador {
 	}
 
 
+	
 	public boolean existeFuncionario(String cpf) {
 
 		return this.rp.existeFuncionario(cpf);

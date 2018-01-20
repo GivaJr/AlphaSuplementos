@@ -8,36 +8,44 @@ public class SuplementoControlador {
 	private RepositorioSuplemento rp = new RepositorioSuplemento(100);
 
 	public void adicionarSuplemento(Suplemento suplemento){
-		if(suplemento != null){
-			if(!this.existeSuplemento(suplemento.getCodigo())){
-				rp.adicionarSuplemento(suplemento);
-			}
+
+		if(!this.rp.existeSuplemento(suplemento.getCodigo())) {
+			
+			this.rp.adicionarSuplemento(suplemento);
+		}else {
+			
+			// tratar com exception 
 		}
 	}
 
 
 	public void removerSuplemento(String codigo){
 		Suplemento s = this.rp.buscarSuplemento(codigo);
-		if( s!= null){
-			rp.removerSuplemento(codigo);
+		if( s!= null && s.getCodigo().equals(codigo)){
+			
+			this.rp.removerSuplemento(codigo);
+		
+		}else {
+		// TRATAR COM EXCEPTION	
+			
 		}
 	}
 
 
 
-	public boolean atualizarSuplemento(String codigo, Suplemento suplemento){
-		boolean r = false;
-		if(this.existeSuplemento(codigo)){
-			r = rp.atualizarSuplemento(codigo, suplemento);
+	public void atualizarSuplemento(String codigo, Suplemento suplemento){
+	
+		if(!this.existeSuplemento(suplemento.getCodigo())){
+			this.rp.atualizarSuplemento(codigo, suplemento);
 		}
-		return r;
+	
 	}
 
 
 	public Suplemento buscarSuplemento(String codigo){
 		Suplemento s = null;
 		if(this.existeSuplemento(codigo)){
-			s = rp.buscarSuplemento(codigo);
+			s = this.rp.buscarSuplemento(codigo);
 		}
 		return s;
 	}
