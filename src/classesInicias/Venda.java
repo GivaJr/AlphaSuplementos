@@ -1,6 +1,6 @@
 package classesInicias;
 
-import java.util.Date;
+import java.time.*;
 
 public class Venda {
 
@@ -8,7 +8,7 @@ public class Venda {
 	private Suplemento suplemento;
 	
 	private double totalDaCompra;
-	private Date dataDaCompra;
+	private LocalDate dataDaCompra;
 
 
 	public Venda(){
@@ -16,7 +16,7 @@ public class Venda {
 	}
 
 
-	public Venda(Suplemento suplemento, Cliente cliente,double total, Date dataDaCompra){
+	public Venda(Suplemento suplemento, Cliente cliente,double total,LocalDate dataDaCompra){
 
 		this.cliente = cliente;
 		this.suplemento = suplemento;
@@ -45,11 +45,11 @@ public class Venda {
 		this.cliente = cliente;
 	}
 
-	public Date getDataDaCompra() {
+	public LocalDate getDataDaCompra() {
 		return dataDaCompra;
 	}
 
-	public void setDataDaCompra(Date dataDaCompra) {
+	public void setDataDaCompra(LocalDate dataDaCompra) {
 		this.dataDaCompra = dataDaCompra;
 	}
 
