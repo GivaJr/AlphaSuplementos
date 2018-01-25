@@ -3,6 +3,8 @@ package controlador;
 import classesInicias.Cliente;
 import classesInicias.Funcionario;
 import classesInicias.Suplemento;
+import exceptions.JaExisteProdutoException;
+import exceptions.NaoExisteProdutoException;
 
 public class Fachada {
 
@@ -69,12 +71,12 @@ public class Fachada {
 	}
 
 
-	public void adicionarSuplemento(Suplemento suplemento) {
+	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteProdutoException{
 		s.adicionarSuplemento(suplemento);
 	}
 
 
-	public void removerSuplemento(String codigo) {
+	public void removerSuplemento(String codigo) throws NaoExisteProdutoException {
 		s.removerSuplemento(codigo);
 	}
 

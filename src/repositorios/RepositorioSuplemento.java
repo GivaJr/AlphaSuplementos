@@ -1,5 +1,7 @@
 package repositorios;
 
+import java.util.ArrayList;
+import java.util.List;
 import classesInicias.Suplemento;
 
 public class RepositorioSuplemento {
@@ -109,4 +111,16 @@ public class RepositorioSuplemento {
 
 
 
+	public List<Suplemento> listarSuplementos(){
+		List<Suplemento> lista = new ArrayList<Suplemento>();
+		for(int i = 0 ; i < numeroDeSuplemento;i++) {
+			lista.add(repositorioSuplemento[i]);
+
+		}
+		return lista;
+	}
+	
+	
+
+	
 }

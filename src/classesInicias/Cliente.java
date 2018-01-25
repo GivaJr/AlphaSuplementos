@@ -1,9 +1,12 @@
 package classesInicias;
 
+import java.util.List;
+
 public class Cliente extends Pessoa {
 
 	
 	private String objetivo;
+	private List<Suplemento> listaSuplementos;
 
 	public Cliente (){
 
@@ -21,6 +24,12 @@ public class Cliente extends Pessoa {
 		this.objetivo = objetivo;
 	}
 
+	public List<Suplemento> getListaSuplementos() {
+		return listaSuplementos;
+	}
+	public void setListaSuplementos(List<Suplemento> listaSuplementos) {
+		this.listaSuplementos = listaSuplementos;
+	}
 	public String toString() {
 		return "Cliente [objetivo=" + objetivo + ", Nome =" + getNome() + "]";
 	}

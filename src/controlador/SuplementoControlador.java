@@ -1,33 +1,37 @@
 package controlador;
 
+import java.util.List;
+
 import classesInicias.Suplemento;
+import exceptions.JaExisteProdutoException;
+import exceptions.NaoExisteProdutoException;
 import repositorios.RepositorioSuplemento;
 
 public class SuplementoControlador {
 
 	private RepositorioSuplemento rp = new RepositorioSuplemento(100);
 
-	public void adicionarSuplemento(Suplemento suplemento){
+	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteProdutoException  {
 
 		if(!this.rp.existeSuplemento(suplemento.getCodigo())) {
 			
 			this.rp.adicionarSuplemento(suplemento);
 		}else {
 			
-			// tratar com exception 
+			throw new JaExisteProdutoException(suplemento);
 		}
 	}
 
 
-	public void removerSuplemento(String codigo){
+	public void removerSuplemento(String codigo)throws NaoExisteProdutoException{
 		Suplemento s = this.rp.buscarSuplemento(codigo);
 		if( s!= null && s.getCodigo().equals(codigo)){
 			
 			this.rp.removerSuplemento(codigo);
 		
 		}else {
-		// TRATAR COM EXCEPTION	
-			
+	
+			throw new NaoExisteProdutoException(s);
 		}
 	}
 
@@ -56,6 +60,13 @@ public class SuplementoControlador {
 
 		return this.rp.existeSuplemento(codigo);
 	}
+
+	
+	public List<Suplemento> listarSuplemento(){
+		
+		return this.rp.listarSuplementos();
+	}
+
 
 
 }

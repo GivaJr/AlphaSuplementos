@@ -19,7 +19,6 @@ public class RepositorioCliente {
 
 	}
 
-
 	public void adicionarCliente(Cliente cliente){
 		if (cliente != null && this.numeroDeCliente < repositorioCliente.length) {
 			this.repositorioCliente[numeroDeCliente] = cliente;
