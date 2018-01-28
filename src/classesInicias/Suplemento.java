@@ -8,20 +8,19 @@ public class Suplemento  {
 	private String marca;
 	private int peso;
 	private String sabor;
-	private String  categoria;
+	
 
 
 
 	public Suplemento(){
 
 	}
-	public Suplemento(String nome, double preco, String codigo,String marca,int peso, String sabor,String categoria){
+	public Suplemento(String nome, double preco, String codigo,String marca,int peso, String sabor){
 
 		this.nome = nome;
 		this.preco = preco;
 		this.codigo = codigo;
 		this.marca = marca;
-		this.categoria = categoria;
 		this.peso = peso;
 		this.sabor = sabor;
 	}
@@ -38,12 +37,6 @@ public class Suplemento  {
 	}
 	public void setSabor(String sabor) {
 		this.sabor = sabor;
-	}
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
 	}
 	public String getNome() {
 		return nome;
