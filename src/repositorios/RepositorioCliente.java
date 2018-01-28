@@ -1,7 +1,10 @@
 package repositorios;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import classesInicias.Cliente;
+
 
 
 
@@ -111,4 +114,16 @@ public class RepositorioCliente {
 		return i;
 	}
 
+	
+
+	public List<Cliente> listarCliente(){
+		List<Cliente> lista = new ArrayList<Cliente>();
+		for(int i = 0 ; i < numeroDeCliente;i++) {
+			lista.add(repositorioCliente[i]);
+
+		}
+		return lista;
+	}
+	
+	
 }

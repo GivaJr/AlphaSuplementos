@@ -1,5 +1,7 @@
 package controlador;
 
+import java.util.List;
+
 import classesInicias.Cliente;
 import repositorios.RepositorioCliente;
 
@@ -59,4 +61,11 @@ public class ClienteControlador {
 		return this.rp.existeCliente(cpf);
 	}
 
+	
+	public List<Cliente> listarCliente(){
+		
+    return this.rp.listarCliente();		
+	}
+	
+	
 }

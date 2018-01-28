@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab text="Cadastrar Cliente">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="389.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="OK" />
+                  <Button layoutX="481.0" layoutY="249.0" mnemonicParsing="false" text="Cancelar" />
+                  <Label layoutX="147.0" layoutY="73.0" text="Nome:" />
+                  <Label layoutX="147.0" layoutY="118.0" text="CPF:" />
+                  <Label layoutX="147.0" layoutY="163.0" text="Objetivo:" />
+                  <TextField layoutX="226.0" layoutY="69.0" />
+                  <TextField layoutX="226.0" layoutY="114.0" />
+                  <TextField layoutX="226.0" layoutY="159.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Deletar Cliente">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="198.0" layoutY="97.0" text="CPF:" />
+                  <TextField layoutX="232.0" layoutY="93.0" />
+                  <Button layoutX="232.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="OK" />
+                  <Button layoutX="322.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Cancelar" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Atualizar Cliente">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+         </content>
+      </Tab>
+      <Tab text="Lista de Clientes">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView layoutX="150.0" layoutY="20.0" prefHeight="298.0" prefWidth="300.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
