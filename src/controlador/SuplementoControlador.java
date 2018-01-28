@@ -3,27 +3,27 @@ package controlador;
 import java.util.List;
 
 import classesInicias.Suplemento;
-import exceptions.JaExisteProdutoException;
-import exceptions.NaoExisteProdutoException;
+import exceptions.JaExisteSuplementoException;
+import exceptions.NaoExisteSuplementoException;
 import repositorios.RepositorioSuplemento;
 
 public class SuplementoControlador {
 
 	private RepositorioSuplemento rp = new RepositorioSuplemento(100);
 
-	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteProdutoException  {
+	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteSuplementoException  {
 
 		if(!this.rp.existeSuplemento(suplemento.getCodigo())) {
 			
 			this.rp.adicionarSuplemento(suplemento);
 		}else {
 			
-			throw new JaExisteProdutoException(suplemento);
+			throw new JaExisteSuplementoException(suplemento);
 		}
 	}
 
 
-	public void removerSuplemento(String codigo)throws NaoExisteProdutoException{
+	public void removerSuplemento(String codigo)throws NaoExisteSuplementoException{
 		Suplemento s = this.rp.buscarSuplemento(codigo);
 		if( s!= null && s.getCodigo().equals(codigo)){
 			
@@ -31,7 +31,7 @@ public class SuplementoControlador {
 		
 		}else {
 	
-			throw new NaoExisteProdutoException(s);
+			throw new NaoExisteSuplementoException(s);
 		}
 	}
 

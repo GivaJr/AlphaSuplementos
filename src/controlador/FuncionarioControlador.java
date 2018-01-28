@@ -2,6 +2,8 @@ package controlador;
 
 
 import classesInicias.Funcionario;
+import exceptions.JaExistePessoaException;
+import exceptions.NaoExistePessoaException;
 import repositorios.RepositorioFuncionario;
 
 
@@ -10,25 +12,26 @@ public class FuncionarioControlador {
 
 	private RepositorioFuncionario rp = new RepositorioFuncionario(100);
 
-	public void adicionarFuncionario(Funcionario funcionario){
+	public void adicionarFuncionario(Funcionario funcionario)throws JaExistePessoaException {
 		
 		if(!this.rp.existeFuncionario(funcionario.getCpf())) {
 			
 			this.rp.adicionarFuncionario(funcionario);
 		}else {
 			
-			// tratar com exception 
+		throw new JaExistePessoaException(funcionario); 
 		}
 	}
 
-	public void removerFuncionario(String cpf){
+	public void removerFuncionario(String cpf)throws NaoExistePessoaException {
 		Funcionario f = this.rp.buscarFuncionario(cpf);
 		
 		if(f != null && f.getCpf().equals(cpf)){
 			this.rp.removerFuncionario(cpf);
 		}else {
 			
-			//tratar com exceptions
+		throw new NaoExistePessoaException(f);
+		
 		}
 	}
 

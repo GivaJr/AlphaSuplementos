@@ -3,8 +3,10 @@ package controlador;
 import classesInicias.Cliente;
 import classesInicias.Funcionario;
 import classesInicias.Suplemento;
-import exceptions.JaExisteProdutoException;
-import exceptions.NaoExisteProdutoException;
+import exceptions.JaExistePessoaException;
+import exceptions.JaExisteSuplementoException;
+import exceptions.NaoExistePessoaException;
+import exceptions.NaoExisteSuplementoException;
 
 public class Fachada {
 
@@ -51,12 +53,12 @@ public class Fachada {
 	}
 
 
-	public void adicionarFuncionario(Funcionario funcionario) {
+	public void adicionarFuncionario(Funcionario funcionario)throws JaExistePessoaException {
 		f.adicionarFuncionario(funcionario);
 	}
 
 
-	public void removerFuncionario(String cpf) {
+	public void removerFuncionario(String cpf) throws NaoExistePessoaException{
 		f.removerFuncionario(cpf);
 	}
 
@@ -71,12 +73,12 @@ public class Fachada {
 	}
 
 
-	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteProdutoException{
+	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteSuplementoException{
 		s.adicionarSuplemento(suplemento);
 	}
 
 
-	public void removerSuplemento(String codigo) throws NaoExisteProdutoException {
+	public void removerSuplemento(String codigo) throws NaoExisteSuplementoException {
 		s.removerSuplemento(codigo);
 	}
 
