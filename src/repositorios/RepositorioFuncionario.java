@@ -54,7 +54,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 			if (ois != null) {
 				try {
 					ois.close();
-				} catch (IOException e) {/* Silent exception */
+				} catch (IOException e) {
 				}
 			}
 		}

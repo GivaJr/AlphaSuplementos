@@ -57,7 +57,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 			if (ois != null) {
 				try {
 					ois.close();
-				} catch (IOException e) {/* Silent exception */
+				} catch (IOException e) {
 				}
 			}
 		}
