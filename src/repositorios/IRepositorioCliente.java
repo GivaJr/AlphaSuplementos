@@ -10,9 +10,7 @@ public interface IRepositorioCliente {
 	void removerCliente(String cpf);
 	boolean atualizarCliente(String cpf, Cliente cliente);
 	Cliente buscarCliente(String cpf);
-	void duplicaArrayRepositorio();
 	boolean existeCliente(String cpf);
-	int procurarCliente(String cpf);
 	List<Cliente> listarCliente();
 	
 

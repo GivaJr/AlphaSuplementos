@@ -10,9 +10,7 @@ public interface IRepositorioSuplemento {
 	void removerSuplemento(String codigo);
 	boolean atualizarSuplemento(String codigo , Suplemento suplemento);
 	Suplemento buscarSuplemento(String codigo);
-	void duplicaArrayRepositorio();
 	boolean existeSuplemento(String codigo);
-	int procurarSuplemento(String codigo);
 	List<Suplemento> listarSuplementos();
 	 
 	

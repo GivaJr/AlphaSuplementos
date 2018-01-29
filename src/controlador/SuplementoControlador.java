@@ -5,19 +5,25 @@ import java.util.List;
 import classesInicias.Suplemento;
 import exceptions.JaExisteSuplementoException;
 import exceptions.NaoExisteSuplementoException;
-import repositorios.RepositorioSuplemento;
+import repositorios.IRepositorioSuplemento;
 
 public class SuplementoControlador {
 
-	private RepositorioSuplemento rp = new RepositorioSuplemento(100);
+	private IRepositorioSuplemento rp;
+
+	public SuplementoControlador (IRepositorioSuplemento instancia) {
+
+		this.rp = instancia;	
+
+	}
 
 	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteSuplementoException  {
 
 		if(!this.rp.existeSuplemento(suplemento.getCodigo())) {
-			
+
 			this.rp.adicionarSuplemento(suplemento);
 		}else {
-			
+
 			throw new JaExisteSuplementoException(suplemento);
 		}
 	}
@@ -26,11 +32,11 @@ public class SuplementoControlador {
 	public void removerSuplemento(String codigo)throws NaoExisteSuplementoException{
 		Suplemento s = this.rp.buscarSuplemento(codigo);
 		if( s!= null && s.getCodigo().equals(codigo)){
-			
+
 			this.rp.removerSuplemento(codigo);
-		
+
 		}else {
-	
+
 			throw new NaoExisteSuplementoException(s);
 		}
 	}
@@ -38,11 +44,11 @@ public class SuplementoControlador {
 
 
 	public void atualizarSuplemento(String codigo, Suplemento suplemento){
-	
+
 		if(!this.existeSuplemento(suplemento.getCodigo())){
 			this.rp.atualizarSuplemento(codigo, suplemento);
 		}
-	
+
 	}
 
 
@@ -61,9 +67,9 @@ public class SuplementoControlador {
 		return this.rp.existeSuplemento(codigo);
 	}
 
-	
+
 	public List<Suplemento> listarSuplemento(){
-		
+
 		return this.rp.listarSuplementos();
 	}
 

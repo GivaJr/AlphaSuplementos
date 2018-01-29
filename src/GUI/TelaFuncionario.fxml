@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab text="Cadastrar Funcionario">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="196.0" layoutY="57.0" text="Nome:" />
+                  <Label layoutX="196.0" layoutY="95.0" text="CPF:" />
+                  <Label layoutX="196.0" layoutY="134.0" text="Função:" />
+                  <Label layoutX="196.0" layoutY="169.0" text="Login:" />
+                  <Label layoutX="196.0" layoutY="202.0" text="Senha:" />
+                  <TextField layoutX="249.0" layoutY="53.0" />
+                  <TextField layoutX="249.0" layoutY="91.0" />
+                  <TextField layoutX="249.0" layoutY="130.0" />
+                  <TextField layoutX="249.0" layoutY="165.0" />
+                  <Button layoutX="398.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="OK" />
+                  <Button layoutX="503.0" layoutY="308.0" mnemonicParsing="false" text="Cancelar" />
+                  <PasswordField layoutX="249.0" layoutY="198.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Deletar Funcionario">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="249.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="OK" />
+                  <Button layoutX="336.0" layoutY="161.0" mnemonicParsing="false" text="Cancelar" />
+                  <Label layoutX="206.0" layoutY="115.0" text="CPF:" />
+                  <TextField layoutX="249.0" layoutY="111.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Listar Funcionario">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView layoutX="168.0" layoutY="31.0" prefHeight="256.0" prefWidth="255.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
