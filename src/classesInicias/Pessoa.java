@@ -1,7 +1,11 @@
 package classesInicias;
 
-public class Pessoa {
+import java.io.Serializable;
 
+public class Pessoa implements Serializable {
+
+	
+	private static final long serialVersionUID = 4978727538283034110L;
 	private String nome;
 	private String cpf;
 

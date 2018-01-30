@@ -39,17 +39,17 @@ public class Fachada implements IFachada{
 
 
 	public void adicionarCliente(Cliente cliente) throws JaExistePessoaException {
-		c.adicionarCliente(cliente);
+		this.c.adicionarCliente(cliente);
 	}
 	public void removerCliente(String cpf) throws NaoExistePessoaException {
-		c.removerCliente(cpf);
+		this.c.removerCliente(cpf);
 	}
 	public void atualizarCliente(String cpf, Cliente cliente) {
-		c.atualizarCliente(cpf, cliente);
+		this.c.atualizarCliente(cpf, cliente);
 	}
 
 	public Cliente buscarCliente(String cpf) {
-		return c.buscarCliente(cpf);
+		return this.c.buscarCliente(cpf);
 	}
 	public List<Cliente> listarCliente() {
 
@@ -60,38 +60,42 @@ public class Fachada implements IFachada{
 
 
 	public void adicionarFuncionario(Funcionario funcionario)throws JaExistePessoaException {
-		f.adicionarFuncionario(funcionario);
+		this.f.adicionarFuncionario(funcionario);
 	}
 	public void removerFuncionario(String cpf) throws NaoExistePessoaException{
-		f.removerFuncionario(cpf);
+		this.f.removerFuncionario(cpf);
 	}
 	public void atualizarFuncionario(String cpf, Funcionario funcionario) {
-		f.atualizarFuncionario(cpf, funcionario);
+		this.f.atualizarFuncionario(cpf, funcionario);
 	}
 	public Funcionario buscarFuncionario(String cpf) {
-		return f.buscarFuncionario(cpf);
+		return this.f.buscarFuncionario(cpf);
 	}
 
 	public List<Funcionario> listarFuncionario() {
 
 		return this.f.listarSuplemento();
 	}
+	
+	public boolean login(String login, String senha) {
+		return this.f.login(login, senha);
+	}
 
 
 
 
 	public void adicionarSuplemento(Suplemento suplemento) throws JaExisteSuplementoException{
-		s.adicionarSuplemento(suplemento);
+		this.s.adicionarSuplemento(suplemento);
 	}
 
 	public void removerSuplemento(String codigo) throws NaoExisteSuplementoException {
-		s.removerSuplemento(codigo);
+		this.s.removerSuplemento(codigo);
 	}
 	public void atualizarSuplemento(String codigo, Suplemento suplemento) {
-		s.atualizarSuplemento(codigo, suplemento);
+		this.s.atualizarSuplemento(codigo, suplemento);
 	}
 	public Suplemento buscarSuplemento(String codigo) {
-		return s.buscarSuplemento(codigo);
+		return this.s.buscarSuplemento(codigo);
 	}
 
 	public List<Suplemento> listarSuplemento() {

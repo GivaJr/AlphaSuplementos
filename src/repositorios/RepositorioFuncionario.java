@@ -13,9 +13,6 @@ import classesInicias.Funcionario;
 
 public class RepositorioFuncionario implements IRepositorioFuncionario , Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 71262372865312693L;
 	private Funcionario[] repositorioFuncionario;
 	private int numeroDeFuncionario;
@@ -40,7 +37,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 	private static RepositorioFuncionario lerDoArquivo() {
 		RepositorioFuncionario instanciaLocal = null;
 
-		File in = new File("funcionarios.dat");
+		File in = new File("funcionarios.txt");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
@@ -66,7 +63,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 		if (instance == null) {
 			return;
 		}
-		File out = new File("funcionario.dat");
+		File out = new File("funcionarios.txt");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -186,4 +183,15 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 	}
 
 
+	public boolean login(String login, String senha) {
+	int i;
+	boolean retorno = false;
+	for (i = 0; i < numeroDeFuncionario; i++) {
+		if (this.repositorioFuncionario[i].getLogin().equals(login) && this.repositorioFuncionario[i].getSenha().equals(senha)) {
+				retorno = true;
+		}
+	}
+	return retorno;
+	}
+	
 }

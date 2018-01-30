@@ -13,9 +13,6 @@ import classesInicias.Suplemento;
 
 public class RepositorioSuplemento implements IRepositorioSuplemento, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6028250050143058231L;
 	private Suplemento[] repositorioSuplemento;
 	private int numeroDeSuplemento;
@@ -43,7 +40,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 	private static RepositorioSuplemento lerDoArquivo() {
 		RepositorioSuplemento instanciaLocal = null;
 
-		File in = new File("suplementos.dat");
+		File in = new File("suplementos.txt");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
@@ -69,7 +66,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 		if (instance == null) {
 			return;
 		}
-		File out = new File("suplementos.dat");
+		File out = new File("suplementos.txt");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 

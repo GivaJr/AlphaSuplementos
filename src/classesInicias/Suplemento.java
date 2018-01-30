@@ -1,7 +1,12 @@
 package classesInicias;
 
-public class Suplemento  {
+import java.io.Serializable;
 
+public class Suplemento implements Serializable  {
+
+	
+	private static final long serialVersionUID = 6995262653438943029L;
+	
 	private String nome;
 	private double preco;
 	private String codigo;

@@ -1,8 +1,12 @@
 package classesInicias;
 
-public class Funcionario extends Pessoa {
+import java.io.Serializable;
+
+public class Funcionario extends Pessoa implements Serializable{
 
 
+
+	private static final long serialVersionUID = -5572208054295808092L;
 	private String funcao;
 	private String login;
 	private String senha;

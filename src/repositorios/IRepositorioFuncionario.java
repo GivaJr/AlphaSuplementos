@@ -11,6 +11,7 @@ public interface IRepositorioFuncionario {
 	Funcionario buscarFuncionario(String cpf);
 	boolean existeFuncionario(String cpf);
 	List<Funcionario> listarFuncionario();
+	boolean login(String login , String senha);
 	
 	
 

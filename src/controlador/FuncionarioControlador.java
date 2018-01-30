@@ -85,4 +85,9 @@ public class FuncionarioControlador {
 		return this.rp.listarFuncionario();
 	}
 
+	
+	public boolean login(String login, String senha) {
+		
+		return this.rp.login(login, senha);
+	}
 }

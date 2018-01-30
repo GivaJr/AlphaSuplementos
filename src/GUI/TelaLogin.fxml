@@ -12,7 +12,7 @@
       <Button fx:id="cancelar" layoutX="313.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnCancelarAcao" text="Cancelar" />
       <Label layoutX="165.0" layoutY="130.0" text="Login:" />
       <Label layoutX="165.0" layoutY="192.0" text="Senha:" />
-      <PasswordField layoutX="226.0" layoutY="188.0" />
-      <TextField layoutX="226.0" layoutY="126.0" />
+      <PasswordField fx:id="senha" layoutX="226.0" layoutY="188.0" />
+      <TextField fx:id="login" layoutX="226.0" layoutY="126.0" />
    </children>
 </Pane>

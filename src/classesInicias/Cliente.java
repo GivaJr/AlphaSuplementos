@@ -1,10 +1,11 @@
 package classesInicias;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements Serializable{
 
-	
+	private static final long serialVersionUID = -185420181319286064L;
 	private String objetivo;
 	private List<Suplemento> listaSuplementos;
 

@@ -13,9 +13,6 @@ import classesInicias.Cliente;
 
 public class RepositorioCliente implements IRepositorioCliente, Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2094830880933112096L;
 	private Cliente[] repositorioCliente;
 	private int numeroDeCliente;
@@ -43,7 +40,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 	private static RepositorioCliente lerDoArquivo() {
 		RepositorioCliente instanciaLocal = null;
 
-		File in = new File("clientes.dat");
+		File in = new File("clientes.txt");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
@@ -69,7 +66,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 		if (instance == null) {
 			return;
 		}
-		File out = new File("cliente.dat");
+		File out = new File("clientes.txt");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
