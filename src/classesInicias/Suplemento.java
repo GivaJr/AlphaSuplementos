@@ -10,8 +10,7 @@ public class Suplemento implements Serializable  {
 	private String nome;
 	private double preco;
 	private String codigo;
-	private String marca;
-	private int peso;
+	private double peso;
 	private String sabor;
 	
 
@@ -20,18 +19,17 @@ public class Suplemento implements Serializable  {
 	public Suplemento(){
 
 	}
-	public Suplemento(String nome, double preco, String codigo,String marca,int peso, String sabor){
+	public Suplemento(String nome, double preco, String codigo,double peso, String sabor){
 
 		this.nome = nome;
 		this.preco = preco;
 		this.codigo = codigo;
-		this.marca = marca;
 		this.peso = peso;
 		this.sabor = sabor;
 	}
 
 
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 	public void setPeso(int peso) {
@@ -61,12 +59,7 @@ public class Suplemento implements Serializable  {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -86,7 +79,7 @@ public class Suplemento implements Serializable  {
 	}
 	@Override
 	public String toString() {
-		return "Suplemento [nome=" + nome + ", marca=" + marca + ", sabor=" + sabor + "]";
+		return "Suplemento [nome=" + nome + ", sabor=" + sabor + "]";
 	}
 
 	

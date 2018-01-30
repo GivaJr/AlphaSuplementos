@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcoesTelaSuplemento">
   <tabs>
     <Tab text="Cadastrar Suplemento">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="414.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="OK" />
-                  <Button layoutX="513.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Cancelar" />
+                  <Button fx:id="btnCadastrar" layoutX="414.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnCadastrarAcao" prefHeight="25.0" prefWidth="68.0" text="Cadastrar" />
+                  <Button fx:id="btnCancelar" layoutX="513.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnCancelarAcao" prefHeight="25.0" prefWidth="67.0" text="Cancelar" />
                   <Label layoutX="175.0" layoutY="56.0" text="Nome:" />
                   <Label layoutX="175.0" layoutY="90.0" text="Codigo:" />
                   <Label layoutX="175.0" layoutY="125.0" text="Peso:" />
                   <Label layoutX="175.0" layoutY="162.0" text="Sabor:" />
                   <Label layoutX="175.0" layoutY="202.0" text="Preço:" />
-                  <TextField layoutX="226.0" layoutY="52.0" />
-                  <TextField layoutX="226.0" layoutY="86.0" />
-                  <TextField layoutX="226.0" layoutY="121.0" />
-                  <TextField layoutX="226.0" layoutY="158.0" />
-                  <TextField layoutX="226.0" layoutY="198.0" />
+                  <TextField fx:id="nome" layoutX="226.0" layoutY="52.0" />
+                  <TextField fx:id="codigo" layoutX="226.0" layoutY="86.0" />
+                  <TextField fx:id="peso" layoutX="226.0" layoutY="121.0" />
+                  <TextField fx:id="sabor" layoutX="226.0" layoutY="158.0" />
+                  <TextField fx:id="preco" layoutX="226.0" layoutY="198.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -30,9 +34,9 @@
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <Label layoutX="165.0" layoutY="96.0" text="Codigo:" />
-                  <TextField layoutX="217.0" layoutY="92.0" />
-                  <Button layoutX="217.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="OK" />
-                  <Button layoutX="305.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Cancelar" />
+                  <TextField fx:id="codigo1" layoutX="217.0" layoutY="92.0" />
+                  <Button fx:id="btnok" layoutX="217.0" layoutY="161.0" mnemonicParsing="false" onAction="#removerSuplemento" prefHeight="25.0" prefWidth="70.0" text="OK" />
+                  <Button fx:id="btnCancelar1" layoutX="305.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnCancelarAcao" prefHeight="25.0" prefWidth="67.0" text="Cancelar" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -40,7 +44,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ListView layoutX="159.0" layoutY="53.0" prefHeight="249.0" prefWidth="266.0" />
+                  <ListView fx:id="listaSuplementos" layoutX="159.0" layoutY="53.0" prefHeight="249.0" prefWidth="266.0" />
                </children>
             </AnchorPane>
          </content>

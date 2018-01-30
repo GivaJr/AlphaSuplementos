@@ -13,7 +13,6 @@ public class Cliente extends Pessoa implements Serializable{
 
 	}
 	public Cliente(Pessoa cliente, String objetivo){
-
 		
 		super(cliente.getNome(), cliente.getCpf());
 		this.objetivo = objetivo;
@@ -28,8 +27,8 @@ public class Cliente extends Pessoa implements Serializable{
 	public List<Suplemento> getListaSuplementos() {
 		return listaSuplementos;
 	}
-	public void setListaSuplementos(List<Suplemento> listaSuplementos) {
-		this.listaSuplementos = listaSuplementos;
+	public void setListaSuplementos(Suplemento p2) {
+		this.listaSuplementos.add(p2);
 	}
 	public String toString() {
 		return "Cliente [objetivo=" + objetivo + ", Nome =" + getNome() + "]";

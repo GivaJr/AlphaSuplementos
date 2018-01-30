@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcoesTelaFuncionario">
   <tabs>
     <Tab text="Cadastrar Funcionario">
       <content>
@@ -15,13 +20,13 @@
                   <Label layoutX="196.0" layoutY="134.0" text="Função:" />
                   <Label layoutX="196.0" layoutY="169.0" text="Login:" />
                   <Label layoutX="196.0" layoutY="202.0" text="Senha:" />
-                  <TextField layoutX="249.0" layoutY="53.0" />
-                  <TextField layoutX="249.0" layoutY="91.0" />
-                  <TextField layoutX="249.0" layoutY="130.0" />
-                  <TextField layoutX="249.0" layoutY="165.0" />
-                  <Button layoutX="398.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="OK" />
-                  <Button layoutX="503.0" layoutY="308.0" mnemonicParsing="false" text="Cancelar" />
-                  <PasswordField layoutX="249.0" layoutY="198.0" />
+                  <TextField fx:id="nome" layoutX="249.0" layoutY="53.0" />
+                  <TextField fx:id="CPF" layoutX="249.0" layoutY="91.0" />
+                  <TextField fx:id="funcao" layoutX="249.0" layoutY="130.0" />
+                  <TextField fx:id="login" layoutX="249.0" layoutY="165.0" />
+                  <Button fx:id="btnCadastrar" layoutX="398.0" layoutY="308.0" mnemonicParsing="false" onAction="#btnCadastrarAcao" prefHeight="25.0" prefWidth="72.0" text="Cadastrar" />
+                  <Button fx:id="btnCancelar" layoutX="503.0" layoutY="308.0" mnemonicParsing="false" onAction="#btnCancelarAcao" prefHeight="25.0" prefWidth="68.0" text="Cancelar" />
+                  <PasswordField fx:id="senha" layoutX="249.0" layoutY="198.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -29,10 +34,10 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="249.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="OK" />
-                  <Button layoutX="336.0" layoutY="161.0" mnemonicParsing="false" text="Cancelar" />
+                  <Button fx:id="ok" layoutX="249.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnOKAcao" prefHeight="25.0" prefWidth="61.0" text="OK" />
+                  <Button fx:id="cancelar" layoutX="336.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnCancelarAcao" text="Cancelar" />
                   <Label layoutX="206.0" layoutY="115.0" text="CPF:" />
-                  <TextField layoutX="249.0" layoutY="111.0" />
+                  <TextField fx:id="cadastroPessoaFisica" layoutX="249.0" layoutY="111.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -40,7 +45,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ListView layoutX="168.0" layoutY="31.0" prefHeight="256.0" prefWidth="255.0" />
+                  <ListView fx:id="listaFuncionario" layoutX="168.0" layoutY="31.0" prefHeight="256.0" prefWidth="255.0" />
                </children>
             </AnchorPane>
          </content>
