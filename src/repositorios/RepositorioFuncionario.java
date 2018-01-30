@@ -89,6 +89,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 		if (funcionario != null && this.numeroDeFuncionario < repositorioFuncionario.length) {
 			this.repositorioFuncionario[numeroDeFuncionario] = funcionario;
 			this.numeroDeFuncionario++;
+			this.salvarArquivo();
 		}
 		if(numeroDeFuncionario == this.repositorioFuncionario.length){
 			this.duplicaArrayRepositorio();
@@ -105,6 +106,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 				this.repositorioFuncionario[i]= this.repositorioFuncionario[numeroDeFuncionario-1];
 				this.repositorioFuncionario[numeroDeFuncionario-1] = null;
 				this.numeroDeFuncionario--;
+				this.salvarArquivo();
 			}	
 		}
 
@@ -118,6 +120,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 			if(this.repositorioFuncionario[i].getCpf().equals(cpf)){
 				this.repositorioFuncionario[i] = funcionario;
 				retorno = true;
+				this.salvarArquivo();
 
 			}
 		}
@@ -177,6 +180,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario , Seriali
 		List<Funcionario> lista = new ArrayList<Funcionario>();
 		for(int i = 0 ; i < numeroDeFuncionario;i++) {
 			lista.add(repositorioFuncionario[i]);
+			this.salvarArquivo();
 
 		}
 		return lista;

@@ -92,6 +92,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 		if (suplemento != null && this.numeroDeSuplemento < repositorioSuplemento.length) {
 			this.repositorioSuplemento[numeroDeSuplemento] = suplemento;
 			this.numeroDeSuplemento++;
+			this.salvarArquivo();
 		}
 		if(numeroDeSuplemento == this.repositorioSuplemento.length){
 			this.duplicaArrayRepositorio();
@@ -110,6 +111,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 				this.repositorioSuplemento[i]= this.repositorioSuplemento[numeroDeSuplemento-1];
 				this.repositorioSuplemento[numeroDeSuplemento-1] = null;
 				this.numeroDeSuplemento--;
+				this.salvarArquivo();
 			}	
 		}
 
@@ -123,6 +125,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 			if(this.repositorioSuplemento[i].getCodigo().equals(codigo)){
 				this.repositorioSuplemento [i] = suplemento;
 				retorno = true;
+				this.salvarArquivo();
 
 			}
 		}
@@ -184,7 +187,7 @@ public class RepositorioSuplemento implements IRepositorioSuplemento, Serializab
 		List<Suplemento> lista = new ArrayList<Suplemento>();
 		for(int i = 0 ; i < numeroDeSuplemento;i++) {
 			lista.add(repositorioSuplemento[i]);
-
+			this.salvarArquivo();
 		}
 		return lista;
 	}

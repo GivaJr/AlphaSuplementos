@@ -91,6 +91,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 		if (cliente != null && this.numeroDeCliente < repositorioCliente.length) {
 			this.repositorioCliente[numeroDeCliente] = cliente;
 			this.numeroDeCliente++;
+			this.salvarArquivo();
 		}
 		if(numeroDeCliente == this.repositorioCliente.length){
 			this.duplicaArrayRepositorio();
@@ -107,6 +108,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 				this.repositorioCliente[i]= this.repositorioCliente[numeroDeCliente-1];
 				this.repositorioCliente[numeroDeCliente-1] = null;
 				this.numeroDeCliente--;
+				this.salvarArquivo();
 			}	
 		}
 
@@ -120,6 +122,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 			if(this.repositorioCliente[i].getCpf().equals(cpf)){
 				this.repositorioCliente[i] = cliente;
 				retorno = true;
+				this.salvarArquivo();
 
 			}
 		}
@@ -185,6 +188,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
 		List<Cliente> lista = new ArrayList<Cliente>();
 		for(int i = 0 ; i < numeroDeCliente;i++) {
 			lista.add(repositorioCliente[i]);
+			this.salvarArquivo();
 
 		}
 		return lista;
