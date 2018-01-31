@@ -3,6 +3,7 @@ package GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import classesInicias.Cliente;
@@ -90,54 +91,54 @@ public class AcoesTelaCliente  implements Initializable{
 		arg.show();
 
 	}
-	
-	
-	
+
+
+
 	@FXML
 	private Button ok;
 	@FXML
 	private Button cancelar;
 	@FXML
 	private TextField cadastroPessoaFisica;
-	
+
 	@FXML
 	public void btnOKAcao(ActionEvent e) throws NaoExistePessoaException {
-		
+
 		try {
-		String cpf = cadastroPessoaFisica.getText().toString();
-		if(!(cpf.equals(""))) {
-			fachada.removerCliente(cpf);
-			Alert alert = new Alert(AlertType.INFORMATION, "Cliente removido com sucesso!");
-			alert.setTitle("Confirmação");
-			alert.showAndWait();
-			limparCamposDeRemocao();
-			
+			String cpf = cadastroPessoaFisica.getText().toString();
+			if(!(cpf.equals(""))) {
+				fachada.removerCliente(cpf);
+				Alert alert = new Alert(AlertType.INFORMATION, "Cliente removido com sucesso!");
+				alert.setTitle("Confirmação");
+				alert.showAndWait();
+				limparCamposDeRemocao();
+
 			}else {
 				Alert alert = new Alert(AlertType.ERROR, "Campos preenchidos incorretamente!");
 				alert.show();
-				}
+			}
 		}catch (NaoExistePessoaException ee) {
 			Alert alert = new Alert(AlertType.ERROR,
 					"CPF invalido, tente novamente!");
 			alert.show();
 		}finally {
 			limparCamposDeRemocao();
-			}
+		}
 	}
-	
+
 	public void limparCamposDeRemocao() {
-		
+
 		cadastroPessoaFisica.setText("");
 	}
-	
-	
-	
+
+	//lista de clientes 
+
 	@FXML 
 	private ListView<Cliente> listaCliente;
-	
+
 	private List<Cliente> listaCliente1 = new ArrayList<Cliente>();
 	private ObservableList<Cliente> c;
-	
+
 	@FXML
 	public void listarCliente() {
 
@@ -145,13 +146,14 @@ public class AcoesTelaCliente  implements Initializable{
 		c = FXCollections.observableArrayList(listaCliente1);
 		listaCliente.getItems().addAll(c);
 	}
-	
-	
-	
-	
+
+
+
+	//Suplementos para o cliente
+
 	@FXML
 	private ComboBox<Cliente> lista;
-	
+
 	private List<Cliente> listarCliente1 = new ArrayList<>();
 	private ObservableList<Cliente> obsLista;
 
@@ -163,15 +165,15 @@ public class AcoesTelaCliente  implements Initializable{
 		lista.getItems().addAll(obsLista);
 	}
 
-	
-	
-	
+
+
+
 	@FXML 
 	private ListView<Suplemento> listaSuplementos;
-	
+
 	private List<Suplemento> listaSuplementos1 = new ArrayList<Suplemento>();
 	private ObservableList<Suplemento> s;
-	
+
 	@FXML
 	public void listarSuplementos() {
 
@@ -179,44 +181,45 @@ public class AcoesTelaCliente  implements Initializable{
 		s = FXCollections.observableArrayList(listaSuplementos1);
 		listaSuplementos.getItems().addAll(s);
 	}
-	
-	
-   @FXML
-   private Button add;
-   @FXML
-   private Button del;
-   
-   
-   
-   @FXML
+
+
+	@FXML
+	private Button add;
+	@FXML
+	private Button del;
+
+	@FXML
 	private ListView<Suplemento> viewSuplementosCliente;
 	private ObservableList<Suplemento> suplementosPessoa;
 
 
-   
+
 	@FXML
 	public void pegarComboSelecionado()  {
 		try {
 			viewSuplementosCliente.getItems().clear();
 			Cliente p = lista.getSelectionModel().getSelectedItem();
 
+
 			if (listaSuplementos.getSelectionModel().getSelectedItem() != null) {
-				Suplemento p2 = listaSuplementos.getSelectionModel().getSelectedItem();
+				Suplemento Sup = listaSuplementos.getSelectionModel().getSelectedItem();
 
 				List<Suplemento> s = p.getListaSuplementos();
 				boolean verificar = false;
 				if (s.size() == 0) {
-					p.setListaSuplementos(p2);
-				
+					p.setListaSuplementos(Sup);
+					fachada.atualizarCliente(p.getCpf() , p);
+
+
 				} else {
 					for (int i = 0; i < s.size(); i++) {
-						if (p2.equals(s.get(i))) {
+						if (Sup.equals(s.get(i))) {
 							verificar = true;
 						}
 					}
 					if (!verificar) {
-						p.setListaSuplementos(p2);
-						
+						p.setListaSuplementos(Sup);
+
 					} else {
 						Alert alert = new Alert(AlertType.ERROR,
 								"Suplemento já cadastrado para este cliente! Não é possível cadastrar o mesmo suplemento!");
@@ -224,48 +227,38 @@ public class AcoesTelaCliente  implements Initializable{
 					}
 				}
 			} else {
-				Alert alert = new Alert(AlertType.ERROR, "Você não selecionou um suplemento!");
+				Alert alert = new Alert(AlertType.ERROR, "Você não selecionou um suplemento 00000!");
 				alert.show();
 			}
 			suplementosPessoa = FXCollections.observableArrayList(p.getListaSuplementos());
 			viewSuplementosCliente.getItems().addAll(suplementosPessoa);
 		} catch (NullPointerException npe) {
-			Alert alert = new Alert(AlertType.ERROR, "Você não selecionou uma suplemento!");
+			Alert alert = new Alert(AlertType.ERROR, "Você não selecionou uma suplemento1111111!");
 			alert.show();
 		}
 	}
 
 	@FXML
 	public void pegarCombo() {
-		
-	try {
-			
-			viewSuplementosCliente.getItems().clear();
-			Cliente c = lista.getSelectionModel().getSelectedItem();
-			suplementosPessoa = FXCollections.observableArrayList(c.getListaSuplementos());
-			viewSuplementosCliente.getItems().addAll(suplementosPessoa);
-			
-		} catch (NullPointerException npe) {
-			Alert alert = new Alert(AlertType.ERROR, "Você não selecionou uma suplemento!");
-			alert.show();
-		}
-	
+
+		viewSuplementosCliente.getItems().clear();
+		Cliente c = lista.getSelectionModel().getSelectedItem();
+		suplementosPessoa = FXCollections.observableArrayList(c.getListaSuplementos());
+		Collections.shuffle(suplementosPessoa);
+		viewSuplementosCliente.getItems().addAll(suplementosPessoa);
+
+
 	}
-	
-	
-	
-	
-	
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-            listarCliente();
-            listarCliente1();
-            listarSuplementos();
-            
+		listarCliente();
+		listarCliente1();
+		listarSuplementos();
+
 	}
 
 
-	
-	
 
 }
