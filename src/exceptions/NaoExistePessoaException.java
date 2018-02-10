@@ -14,7 +14,6 @@ public class NaoExistePessoaException extends Exception{
 	}
 
 	public Pessoa getPessoaNaoExiste() {
-
 		return pessoaNaoExiste;
 	}
 
